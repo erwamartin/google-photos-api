@@ -1,5 +1,5 @@
 {
-  "name": "googlephotos",
+  "name": "googlephotos-api",
   "version": "0.3.5",
   "description": "Library to make working with the Google Photos API easy",
   "main": "lib/index.js",
@@ -12,19 +12,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roopakv/google-photos.git"
+    "url": "git+https://github.com/erwamartin/google-photos-api.git"
   },
   "keywords": [
     "google",
     "google-photos",
-    "photos"
+    "photos",
+    "react-native",
+    "react",
+    "api"
   ],
-  "author": "Roopak Venkatakrishnan",
+  "author": "Erwan Martin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/roopakv/google-photos/issues"
+    "url": "https://github.com/erwamartin/google-photos-api/issues"
   },
-  "homepage": "https://github.com/roopakv/google-photos#readme",
+  "homepage": "https://github.com/erwamartin/google-photos-api#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.19.1",

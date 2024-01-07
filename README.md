@@ -1,6 +1,8 @@
-# googlephotos
+# googlephotos-api
 
-Wrapper around the google photos API. The API reference can be found [here](https://developers.google.com/photos/library/reference/).
+Wrapper around the google photos API compatible with browsers and React Native. The API reference can be found [here](https://developers.google.com/photos/library/reference/).
+
+This library is based on [googlephotos](https://github.com/roopakv/google-photos) by [roopakv](https://github.com/roopakv). It has been updated to support React Native.
 
 ## Getting Started
 
@@ -9,7 +11,7 @@ will use the auth token the object was constructed with. Read the section below 
 with the required scopes.
 
 ```js
-const Photos = require('googlephotos');
+const Photos = require('googlephotos-api');
 
 const photos = new Photos(your_google_auth_token);
 ```
@@ -21,6 +23,12 @@ This package doesn't authentication itself. We suggest using the official
 
 Use the library to get the auth token for the scopes you will need. Read [this](https://developers.google.com/photos/library/guides/authentication-authorization) to figure out what
 scopes you will need.
+
+#### React Native
+
+For React Native, you can use [google-signin](https://github.com/react-native-google-signin/google-signin) to get the auth token.
+
+#### Scopes
 
 The scopes are available on the `Photos` object to make your life easier.
 
@@ -38,7 +46,7 @@ APIs -> Credentials.
 
 ```js
 const {google} = require('googleapis');
-const Photos = require('googlephotos');
+const Photos = require('googlephotos-api');
 
 const oauth2Client = new google.auth.OAuth2(YOUR_CLIENT_ID, YOUR_CLIENT_SECRET, YOUR_REDIRECT_URL);
 
@@ -139,30 +147,6 @@ const response = await photos.mediaItems.get(mediaItemId);
 // doSomethingWithResponse(response);
 ```
 
-### upload
-
-```js
-const response = await photos.mediaItems.upload(albumId, fileName, filePath, description);
-// doSomethingWithResponse(response);
-```
-
-### uploadMultiple
-
-Supports uploading an array of file objects at once from a single directory, file descriptions are optional.
-Supports an optional requestDelay, which pauses execution for the specified time (milliseconds) after 50 requests to google photos `upload` api.
-This is to prevent the api from rejecting requests for making too many requests per minute.
-
-```js
-const files = [
-  {name: 'myself.jpg', description: 'any description you want'},
-  {name: 'someone-else.png'},
-];
-
-const requestDelay = 1000;
-
-const response = await photos.mediaItems.uploadMultiple(albumId, files, directoryPath, requestDelay);
-// doSomethingWithResponse(response);
-```
 
 ### search
 
