@@ -1,7 +1,7 @@
 {
   "name": "googlephotos-api",
-  "version": "0.3.5",
-  "description": "Library to make working with the Google Photos API easy",
+  "version": "0.1.0",
+  "description": "Library to make working with the Google Photos API easy (in browser or React Native)",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/**/*.js",
